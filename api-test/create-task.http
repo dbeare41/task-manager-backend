@@ -1,0 +1,9 @@
+POST http://localhost:8080/tasks
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlbWFpbEBnbWFpbC5jb20iLCJleHAiOjE3NjUzMDUzNTQsInVzZXJJZCI6MX0.goWHFhJ0Zzyh3_faAAQ_99_L3FSUfBrT37LtLn0UY4o
+
+{
+    "title":"walk dog",
+    "description":"take molly for a walk around the park",
+    "status":"todo"
+}
