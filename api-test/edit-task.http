@@ -1,9 +1,9 @@
-POST http://localhost:8080/tasks
+PUT http://localhost:8080/tasks/1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlbWFpbEBnbWFpbC5jb20iLCJleHAiOjE3NjUzMjg3MDEsInVzZXJJZCI6MX0.yo09IvKwI4G5-8hTXsQr7TdCWIUa76ENTMx9G2Ptk6w
 
 {
-    "title":"walk dog",
-    "description":"take molly for a walk around the park",
-    "status":"todo"
+    "title":"take out trash",
+    "description":"take the trash out to the blue bin",
+    "status":"completed"
 }

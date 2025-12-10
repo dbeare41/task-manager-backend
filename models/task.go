@@ -42,3 +42,30 @@ func GetAllTasks() ([]Task, error) {
 	}
 	return tasks, nil
 }
+
+func GetTaskById(id int64) (*Task, error) {
+	query := "SELECT * FROM tasks WHERE id =?"
+	var t Task
+	row := db.DB.QueryRow(query, id)
+	err := row.Scan(&t.Id, &t.Title, &t.Description, &t.Status, &t.UserID)
+	if err != nil {
+		return nil, err
+	}
+	return &t, nil
+}
+
+func (t Task) UpdateTaskInfo() error {
+	query := `
+	UPDATE tasks SET title = ?, description = ?, status =? WHERE id = ?
+	`
+	stmt, err := db.DB.Prepare(query)
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+	_, err = stmt.Exec(t.Title, t.Description, t.Status, t.Id)
+	if err != nil {
+		return err
+	}
+	return nil
+}
